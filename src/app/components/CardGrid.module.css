@@ -1,0 +1,31 @@
+.grid {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  margin-left: -24px; /* Compensate for column gap */
+}
+
+.gridColumn {
+  padding-left: 24px; /* Column gap */
+  background-clip: padding-box;
+}
+
+/* Ensure cards maintain proper spacing */
+.gridColumn > div {
+  margin-bottom: 24px;
+}
+
+/* Tablet breakpoint */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop breakpoint */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 32px;
+  }
+} 

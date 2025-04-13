@@ -1,0 +1,44 @@
+{
+  "name": "xpara-ai",
+  "version": "0.1.0",
+  "description": "AI-powered analysis and summarization tool for 4chan's /x/ paranormal board",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "start:combined": "concurrently \"tsx src/scripts/schedule.ts\" \"next start\"",
+    "lint": "next lint",
+    "scrape": "tsx src/app/lib/scraper/index.ts",
+    "summarize": "tsx src/scripts/summarize.ts && npm run publish",
+    "schedule": "tsx src/scripts/schedule.ts",
+    "post": "tsx src/scripts/post-to-x.ts",
+    "publish": "tsx src/scripts/publish.ts"
+  },
+  "dependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/node-cron": "^3.0.11",
+    "@types/node-fetch": "^2.6.12",
+    "axios": "^1.6.7",
+    "concurrently": "^8.2.2",
+    "dotenv": "^16.4.7",
+    "next": "15.2.2",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^2.7.0",
+    "oauth-1.0a": "^2.2.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-masonry-css": "^1.0.16",
+    "react-tweet": "^3.2.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5"
+  }
+}

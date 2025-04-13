@@ -1,0 +1,151 @@
+.cardContainer {
+  perspective: 1000px;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.cardFace {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* Safari */
+}
+
+.cardFront {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.card {
+  border-radius: 12px;
+  padding: 24px;
+  margin: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  min-height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: white;
+  background: #333333;
+}
+
+/* Remove background for article cards */
+:global(.articleCard).card {
+  background: transparent !important;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.pinkCard {
+  background: #fa1b66;
+  color: white;
+}
+
+.flipButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: inherit;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  z-index: 10;
+}
+
+.flipButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.backContent {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px; /* Add space for the title */
+}
+
+/* Simple flip card styles that work everywhere */
+.flipCard {
+  width: 100%;
+  perspective: 1000px;
+  position: relative;
+}
+
+.flipCardInner {
+  position: relative;
+  width: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flipCardInner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flipCardFront, .flipCardBack {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  width: 100%;
+  min-height: 100%;
+}
+
+.flipCardFront {
+  z-index: 1;
+}
+
+.flipCardBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  background: #333333;
+  color: white;
+} 
