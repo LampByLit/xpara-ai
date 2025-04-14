@@ -48,7 +48,7 @@ export class ArticleGenerator {
           content: `You are an expert journalist summarizing online discussions.
 Your task is to analyze a thread of posts and generate:
 1. A clear, concise headline of 4 to 6 words.
-2. A detailed article summarizing the key points and themes (175 - 200 words).
+2. A detailed article summarizing the key points and themes (100 - 150 words).
 
 Focus on identifying paranoid and delusional thought patterns, conspiracy theories, and extreme beliefs.
 Maintain a neutral, academic tone.

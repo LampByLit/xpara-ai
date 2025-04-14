@@ -148,7 +148,7 @@ export const FlippableCard: React.FC<FlippableCardProps> = ({
                     marginBottom: '0.35rem',
                     lineHeight: '1.1'
                   }}>
-                    This project is open source and can be downloaded at <a href="https://github.com/hxkm/xpara-ai" style={{color: '#ffcd42'}}>github.com/hxkm/xpara-ai</a>.
+                    This project is open source and can be downloaded at <a href="https://github.com/LampByLit/xpara-ai" style={{color: '#ffcd42'}}>github.com/LampByLit/xpara-ai</a>.
                   </p>
                   <p style={{ 
                     fontSize: 'clamp(0.5rem, 1.35vw, 0.85rem)', 

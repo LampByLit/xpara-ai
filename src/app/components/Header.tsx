@@ -38,6 +38,12 @@ export const Header = () => {
               /x/
             </a>
             <a 
+              href="https://lit-ai-production.up.railway.app/"
+              className={styles.dropdownItem}
+            >
+              /lit/
+            </a>
+            <a 
               href="https://pol-ai-production.up.railway.app/"
               className={styles.dropdownItem}
             >
