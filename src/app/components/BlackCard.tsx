@@ -33,7 +33,7 @@ export default function BlackCard() {
       ) : embedError && tweetUrl ? (
         <div style={{ color: '#fff', textAlign: 'center' }}>
           <p style={{ marginBottom: '1rem' }}>
-            This Post's visibility is limited; this Post may violate X's rules against Hateful Conduct.<br />
+            This Post&#39;s visibility is limited; this Post may violate X&#39;s rules against Hateful Conduct.<br />
             <a href={tweetUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#1da1f2', textDecoration: 'underline' }}>
               Click Here to view this Post on X.com.
             </a>
