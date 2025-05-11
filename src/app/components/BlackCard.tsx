@@ -3,11 +3,14 @@ import { Tweet } from 'react-tweet';
 
 export default function BlackCard() {
   const [tweetId, setTweetId] = useState<string | null>(null);
+  const [tweetUrl, setTweetUrl] = useState<string | null>(null);
+  const [embedError, setEmbedError] = useState(false);
 
   useEffect(() => {
     fetch('https://xposter-production.up.railway.app/latest/xpara')
       .then(res => res.text())
       .then(url => {
+        setTweetUrl(url);
         const id = url.split('status/')[1];
         if (id) setTweetId(id);
       });
@@ -25,7 +28,20 @@ export default function BlackCard() {
       alignItems: 'center',
       padding: '1rem'
     }}>
-      {tweetId ? <Tweet id={tweetId} /> : <div style={{ color: '#fff' }}>Loading...</div>}
+      {tweetId && !embedError ? (
+        <Tweet id={tweetId} onError={() => setEmbedError(true)} />
+      ) : embedError && tweetUrl ? (
+        <div style={{ color: '#fff', textAlign: 'center' }}>
+          <p style={{ marginBottom: '1rem' }}>
+            This Post's visibility is limited; this Post may violate X's rules against Hateful Conduct.<br />
+            <a href={tweetUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#1da1f2', textDecoration: 'underline' }}>
+              Click Here to view this Post on X.com.
+            </a>
+          </p>
+        </div>
+      ) : (
+        <div style={{ color: '#fff' }}>Loading...</div>
+      )}
     </div>
   );
 } 
